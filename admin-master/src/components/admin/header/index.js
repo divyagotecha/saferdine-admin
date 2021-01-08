@@ -5,9 +5,9 @@ export default class Header extends Component {
         return (
             <div>
                 <nav className="sb-topnav navbar navbar-expand navbar-light bg-clr">
-                    <a className="navbar-brand logo-brand" href="/">Big Supermarket</a>
+                    <a className="navbar-brand logo-brand" href="/">SaferDine</a>
                     <button className="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" ><i className="fas fa-bars" /></button>
-                    <a href="/" className="frnt-link"><i className="fas fa-external-link-alt" />Home</a>
+                    <a href="/admin" className="frnt-link"><i className="fas fa-external-link-alt" />Home</a>
                     <ul className="navbar-nav ml-auto mr-md-0">
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="fas fa-user fa-fw" /></a>

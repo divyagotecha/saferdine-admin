@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
+//  import'../../../css/';
 
 export default class Sidebar extends Component {
     render() {
@@ -8,20 +9,21 @@ export default class Sidebar extends Component {
                 <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div className="sb-sidenav-menu">
                         <div className="nav">
-                            <a className="nav-link active" href="/">
+                            <a className="nav-link active" href="/admin">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt" /></div>
                                 Dashboard
                             </a>
 
                             <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseShops" aria-expanded="false" aria-controls="collapseShops">
-                                <div className="sb-nav-link-icon"><i className="fas fa-store" /></div>
-                                Shops
+                                <div className="sb-nav-link-icon"><i class="fa fa-shopping-cart sidebarorder-icon" aria-hidden="true"></i></div>
+                                Orders
                             <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
                             </a>
                             <div className="collapse" id="collapseShops" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <a className="nav-link sub_nav_link" href="/admin/shop/list">All Shops</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/shop/create">Add Shop</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/order/PendingOrders">Pending Orders</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/order/ActiveOrder">Active Orders</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/order/CompleteOrder">Completed Orders</a>
                                 </nav>
                             </div>
                             <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="false" aria-controls="collapseProducts">
@@ -31,9 +33,8 @@ export default class Sidebar extends Component {
                             </a>
                             <div className="collapse" id="collapseProducts" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <a className="nav-link sub_nav_link" href="/admin/product/list">All Products</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/product/create">Add Product</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/product/more-photo">Add More Image</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/products/CreateProducts">Create Product</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/products/ProductsList">List Products</a>
                                 </nav>
                             </div>
                             <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
@@ -43,35 +44,55 @@ export default class Sidebar extends Component {
                             </a>
                             <div className="collapse" id="collapseCategories" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <a className="nav-link sub_nav_link" href="/admin/category/list">All Categories</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/category/create">Add Category</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/category/sub-create">Add Sub-Category</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/category/sub-child-create">Add Child-Category</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/category/CreateCategory">Create Category</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/category/CategoryList">Category List</a>
+                                    {/* <a className="nav-link sub_nav_link" href="/admin/category/sub-create">Add Sub-Category</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/category/sub-child-create">Add Child-Category</a> */}
 
                                 </nav>
                             </div>
-                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLocations" aria-expanded="false" aria-controls="collapseLocations">
-                                <div className="sb-nav-link-icon"><i className="fas fa-map-marker-alt" /></div>
-                                Locations
+                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsecheckout" aria-expanded="false" aria-controls="collapseLocations">
+                                <div className="sb-nav-link-icon"><i class="fa fa-credit-card sidebarcheckout-icon" aria-hidden="true"></i></div>
+                                Checkouts
                                 <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
                             </a>
-                            <div className="collapse" id="collapseLocations" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                            <div className="collapse" id="collapsecheckout" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <a className="nav-link sub_nav_link" href="/admin/location/list">All Locations</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/location/create">Add Location</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/location/list">Pending Checkout</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/location/create">Completed Checkout</a>
                                 </nav>
                             </div>
-                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAreas" aria-expanded="false" aria-controls="collapseAreas">
-                                <div className="sb-nav-link-icon"><i className="fas fa-map-marked-alt" /></div>
-                                Areas
+                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapstable" aria-expanded="false" aria-controls="collapseAreas">
+                                <div className="sb-nav-link-icon"><i class="fa fa-table " aria-hidden="true"></i></div>
+                                Tables
                              <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
                             </a>
-                            <div className="collapse" id="collapseAreas" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                            <div className="collapse" id="collapstable" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav className="sb-sidenav-menu-nested nav">
-                                    <a className="nav-link sub_nav_link" href="/admin/area/list">All Areas</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/area/create">Add Area</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/area/list">Create Table</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/area/create">List Tables</a>
                                 </nav>
                             </div>
+
+                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseuser" aria-expanded="false" aria-controls="collapseLocations">
+                                <div className="sb-nav-link-icon"><i class="fa fa-user sidebaruser-icon" aria-hidden="true"></i></div>
+                                Users
+                                <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
+                            </a>
+                            <div className="collapse" id="collapseuser" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav className="sb-sidenav-menu-nested nav">
+                                    <a className="nav-link sub_nav_link" href="/admin/location/list">Create User</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/location/create">List User</a>
+                                </nav>
+                            </div>
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <a className="nav-link" href="/admin/customer/list">
                                 <div className="sb-nav-link-icon"><i className="fas fa-users" /></div>
                                 Customers
